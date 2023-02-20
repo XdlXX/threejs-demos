@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import vertex from './vert.vt.glsl?raw'
+import vertex from './vert.vs.glsl?raw'
 import fragment from './frag.fs.glsl?raw'
 import { canvasFullSize } from '~/utils/canvas'
 import { createWebGL } from '~/utils/webgl'
