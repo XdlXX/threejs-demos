@@ -13,6 +13,11 @@ const demos = computed(() => router.options.routes.filter(i => i.path.startsWith
 <template>
   <div fixed top-0 bottom-0 right-0 shadow overflow-overlay scrollbar="~ w-0px" style="width: 120px;">
     <ul list-none>
+      <li>
+        <button m-3 text-sm btn :class="{ 'bg-gray': curPath !== '/' }" @click="go('/')">
+          HOME
+        </button>
+      </li>
       <li v-for="(i, idx) in demos" :key="i.path">
         <button
           m-3 text-sm btn
