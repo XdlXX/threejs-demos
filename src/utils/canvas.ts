@@ -1,4 +1,11 @@
 export function canvasFullSize(wrap: HTMLElement, canvas: HTMLCanvasElement) {
-  canvas.width = wrap.offsetWidth
-  canvas.height = wrap.offsetHeight
+  const setFull = () => {
+    canvas.width = wrap.offsetWidth
+    canvas.height = wrap.offsetHeight
+  }
+  setFull()
+  window.addEventListener('resize', setFull)
+  onUnmounted(() => {
+    window.removeEventListener('resize', setFull)
+  })
 }
